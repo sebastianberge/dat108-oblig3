@@ -15,10 +15,11 @@ public class PaameldingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private Validering validering;
+	private DeltakereEAO deltakereEAO;
 
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
-		
+			
 		request.getRequestDispatcher("WEB-INF/paameldingsskjema.jsp")
 		.forward(request, response);;
 		
@@ -33,6 +34,15 @@ public class PaameldingServlet extends HttpServlet {
 		validering.isKjonnGyldig();
 		
 		request.getSession().setAttribute("validering", validering);
+		
+		String hashpassord = "";
+		
+		if(validering.isAllInputGyldig()) {
+			deltakereEAO.leggtilDeltaker(new Deltaker(validering.getKjonn(),validering.getFornavn() + " " + validering.getEtternavn(), hashpassord, validering.getMobil()));
+			deltakereEAO.oppdaterDeltakere();
+		}
+		
+		// innlogging godkjent, lag deltaker og send til bekreftelse.
 		
 		response.sendRedirect("PaameldingServlet");
 		
