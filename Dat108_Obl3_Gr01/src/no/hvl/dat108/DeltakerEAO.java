@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Stateless
-public class DeltakereEAO {
+public class DeltakerEAO {
 	
 	private List<Deltaker> deltakere;
 	
