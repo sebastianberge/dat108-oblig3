@@ -21,8 +21,8 @@ public class Validering {
 		return kjonnFeil;
 	}
 
-	public void setKjonnFeil(String kjønnFeil) {
-		this.kjonnFeil = kjønnFeil;
+	public void setKjonnFeil(String kjonnFeil) {
+		this.kjonnFeil = kjonnFeil;
 	}
 
 	public Validering(HttpServletRequest request) {
@@ -157,8 +157,8 @@ public class Validering {
 		return kjonn;
 	}
 
-	public void setKjonn(String kjønn) {
-		this.kjonn = kjønn;
+	public void setKjonn(String kjonn) {
+		this.kjonn = kjonn;
 	}
 
 }
