@@ -30,6 +30,8 @@ public class PaameldingServlet extends HttpServlet {
 		
 		validering = new Validering(request);
 		
+		validering.isKjonnGyldig();
+		
 		request.getSession().setAttribute("validering", validering);
 		
 		response.sendRedirect("PaameldingServlet");

@@ -16,14 +16,6 @@ public class Validering {
 	private String passord2Feil;
 	private String kjonn;
 	private String kjonnFeil;
-	
-	public String getKjonnFeil() {
-		return kjonnFeil;
-	}
-
-	public void setKjonnFeil(String kjonnFeil) {
-		this.kjonnFeil = kjonnFeil;
-	}
 
 	public Validering(HttpServletRequest request) {
 		this.fornavn = request.getParameter("fornavn");
@@ -43,9 +35,11 @@ public class Validering {
 				isKjonnGyldig();
 	}
 
-	private boolean isKjonnGyldig() {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean isKjonnGyldig() {
+		if(kjonn == null) {
+			kjonnFeil = "Er du usikker?";
+		}
+		return kjonn != null;
 	}
 
 	private boolean isPassord2Gyldig() {
@@ -159,6 +153,14 @@ public class Validering {
 
 	public void setKjonn(String kjonn) {
 		this.kjonn = kjonn;
+	}
+	
+	public String getKjonnFeil() {
+		return kjonnFeil;
+	}
+
+	public void setKjonnFeil(String kjonnFeil) {
+		this.kjonnFeil = kjonnFeil;
 	}
 
 }
