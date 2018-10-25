@@ -53,8 +53,11 @@ public class Validering {
 	}
 
 	private boolean isMobilGyldig() {
-		// TODO Auto-generated method stub
-		return false;
+		if(mobil != null) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	private boolean isEtternavnGylig() {
