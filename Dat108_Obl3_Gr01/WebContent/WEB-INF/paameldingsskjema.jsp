@@ -7,10 +7,10 @@
 <!-- Fra https://purecss.io/ -->
 <link rel="stylesheet"
 	href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
-<title>Påmelding</title>
+<title>Paamelding</title>
 </head>
 <body>
-	<h2>Påmelding</h2>
+	<h2>Paamelding</h2>
 	<form method="post" class="pure-form pure-form-aligned">
 		<fieldset>
 			<div class="pure-control-group">
@@ -40,16 +40,16 @@
 					<font color="red">${validering.passord2Feil}</font>
 			</div>
 			<div class="pure-control-group">
-				<label for="kjonn">Kjønn:</label> <input type="radio" name="kjonn"
+				<label for="kjonn">Kjonn:</label> <input type="radio" name="kjonn"
 					value="mann"
 					 />mann
 				<input type="radio" name="kjonn" value="kvinne"
 					 />kvinne
-				<font color="red">${validering.kjønnFeil}</font>
+				<font color="red">${validering.kjonnFeil}</font>
 			</div>
 			<div class="pure-controls">
 				<button type="submit" class="pure-button pure-button-primary">Meld
-					meg på</button>
+					meg paa</button>
 			</div>
 		</fieldset>
 	</form>

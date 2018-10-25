@@ -14,15 +14,15 @@ public class Validering {
 	private String passordFeil;
 	private String passord2;
 	private String passord2Feil;
-	private String kjønn;
-	private String kjønnFeil;
+	private String kjonn;
+	private String kjonnFeil;
 	
-	public String getKjønnFeil() {
-		return kjønnFeil;
+	public String getKjonnFeil() {
+		return kjonnFeil;
 	}
 
-	public void setKjønnFeil(String kjønnFeil) {
-		this.kjønnFeil = kjønnFeil;
+	public void setKjonnFeil(String kjønnFeil) {
+		this.kjonnFeil = kjønnFeil;
 	}
 
 	public Validering(HttpServletRequest request) {
@@ -31,7 +31,7 @@ public class Validering {
 		this.mobil = request.getParameter("mobil");
 		this.passord = request.getParameter("passord");
 		this.passord2 = request.getParameter("passordRepetert");
-		this.kjønn = request.getParameter("kjonn");
+		this.kjonn = request.getParameter("kjonn");
 	}
 	
 	public boolean isAllInputGyldig() {
@@ -40,10 +40,10 @@ public class Validering {
 				isMobilGyldig() && 
 				isPassordGyldig() &&
 				isPassord2Gyldig() &&
-				isKjønnGyldig();
+				isKjonnGyldig();
 	}
 
-	private boolean isKjønnGyldig() {
+	private boolean isKjonnGyldig() {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -153,12 +153,12 @@ public class Validering {
 		this.passord2Feil = passord2Feil;
 	}
 
-	public String getKjønn() {
-		return kjønn;
+	public String getKjonn() {
+		return kjonn;
 	}
 
-	public void setKjønn(String kjønn) {
-		this.kjønn = kjønn;
+	public void setKjonn(String kjønn) {
+		this.kjonn = kjønn;
 	}
 
 }
