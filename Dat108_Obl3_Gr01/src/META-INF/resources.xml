@@ -2,8 +2,8 @@
 <resources>
     <Resource id="DAT108LocalDS" name="DAT108LocalDS" type="javax.sql.DataSource">
 	jdbcDriver = org.postgresql.Driver
-	jdbcUrl = jdbc:postgresql://localhost:5432/postgres
-	userName = postgres
+	jdbcUrl = jdbc:postgresql://data1.hib.no:5432/postgres
+	userName = h246951
 	password = pass
     </Resource>
 </resources>
