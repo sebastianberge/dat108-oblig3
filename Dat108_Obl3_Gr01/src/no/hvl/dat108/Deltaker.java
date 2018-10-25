@@ -14,7 +14,7 @@ public class Deltaker {
 	private String navn;
 	private String hashpassord;
 	@Id
-	@Column(name = "tlfnr")
+	@Column(name = "mobil")
 	private String mobil;
 	
 	public Deltaker() {
