@@ -1,6 +1,8 @@
 package no.hvl.dat108;
 
 import java.io.IOException;
+
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,8 +16,15 @@ import javax.servlet.http.HttpServletResponse;
 public class PaameldingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private Validering validering;
+	@EJB
 	private DeltakerEAO deltakereEAO;
+	private Deltakerliste deltakerliste;
+	private Validering validering;
+
+	@Override
+	public void init() throws ServletException {
+		deltakerliste = deltakereEAO.getDeltakere();
+	}
 
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
@@ -38,8 +47,13 @@ public class PaameldingServlet extends HttpServlet {
 		String hashpassord = "";
 		
 	//	if(validering.isAllInputGyldig()) {
-			deltakereEAO.leggtilDeltaker(new Deltaker(validering.getKjonn(),validering.getFornavn() + " " + validering.getEtternavn(), hashpassord, validering.getMobil()));
-			deltakereEAO.oppdaterDeltakere();
+			deltakerliste.leggTilDeltaker(
+					new Deltaker(validering.getKjonn(),
+					validering.getFornavn() + " " + validering.getEtternavn(),
+					hashpassord, 
+					validering.getMobil()));
+			deltakereEAO.oppdaterDeltakere(deltakerliste);
+
 	//	}
 		
 		// innlogging godkjent, lag deltaker og send til bekreftelse.

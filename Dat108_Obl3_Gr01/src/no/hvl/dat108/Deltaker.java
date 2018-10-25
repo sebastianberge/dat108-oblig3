@@ -3,10 +3,11 @@ package no.hvl.dat108;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema = "dat108_oblig3", name = "deltaker")
+@Table(schema = "public", name = "deltakere")
 public class Deltaker {
 	
 	@Column(name = "kjonn")
@@ -18,6 +19,9 @@ public class Deltaker {
 	@Id
 	@Column(name = "mobil")
 	private String mobil;
+	
+	@ManyToOne
+	private Deltakerliste deltakerliste;
 	
 	public Deltaker() {
 		
@@ -61,6 +65,10 @@ public class Deltaker {
 
 	public void setMobil(String mobil) {
 		this.mobil = mobil;
+	}
+	
+	public void setListe(Deltakerliste deltakerliste) {
+		this.deltakerliste = deltakerliste;
 	}
 
 }
