@@ -26,7 +26,7 @@ public class LoggInnServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
 		
-		//if påmelding går korrekt, send til påmeldingsbekreftelse, else gi feilmelding
+		//if pï¿½melding gï¿½r korrekt, send til pï¿½meldingsbekreftelse, else gi feilmelding
 		
 	}
 
