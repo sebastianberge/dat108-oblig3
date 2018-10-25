@@ -58,13 +58,19 @@ public class Validering {
 	}
 
 	private boolean isEtternavnGylig() {
-		// TODO Auto-generated method stub
-		return false;
+		if(etternavn != null) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	private boolean isFornavnGyldig() {
-		// TODO Auto-generated method stub
-		return false;
+		if(fornavn != null) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public String getFornavn() {
