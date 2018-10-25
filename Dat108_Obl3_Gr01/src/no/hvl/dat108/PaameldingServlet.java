@@ -37,13 +37,12 @@ public class PaameldingServlet extends HttpServlet {
 		
 		String hashpassord = "";
 		
-		if(validering.isAllInputGyldig()) {
+	//	if(validering.isAllInputGyldig()) {
 			deltakereEAO.leggtilDeltaker(new Deltaker(validering.getKjonn(),validering.getFornavn() + " " + validering.getEtternavn(), hashpassord, validering.getMobil()));
 			deltakereEAO.oppdaterDeltakere();
-		}
+	//	}
 		
 		// innlogging godkjent, lag deltaker og send til bekreftelse.
-		
 		response.sendRedirect("PaameldingServlet");
 		
 	}
