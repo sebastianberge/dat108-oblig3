@@ -9,9 +9,11 @@ import javax.persistence.Table;
 @Table(schema = "dat108_oblig3", name = "deltaker")
 public class Deltaker {
 	
-	
+	@Column(name = "kjonn")
 	private String kjonn;
+	@Column(name = "navn")
 	private String navn;
+	@Column(name = "hashpassord")
 	private String hashpassord;
 	@Id
 	@Column(name = "mobil")
