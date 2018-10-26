@@ -42,37 +42,48 @@ public class Validering {
 		return kjonn != null;
 	}
 
-	private boolean isPassord2Gyldig() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	private boolean isPassordGyldig() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	private boolean isMobilGyldig() {
-		if(mobil != null) {
+	public boolean isPassord2Gyldig() {
+		if (passord2.equals(passord)) {
 			return true;
 		} else {
+			passord2Feil = "Samsvarer ikke med forste passord.";
 			return false;
 		}
 	}
 
-	private boolean isEtternavnGylig() {
-		if(etternavn != null) {
+	public boolean isPassordGyldig() {
+		if (passord.isEmpty()) {
+			passordFeil = "Try again sir";
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	public boolean isMobilGyldig() {
+		if (mobil != null && mobil.matches("^\\d{8}$")) {
 			return true;
 		} else {
+			mobilFeil = "Mobilnummer ikke riktig";
 			return false;
 		}
 	}
 
-	private boolean isFornavnGyldig() {
-		if(fornavn != null) {
-			return true;
-		} else {
+	public boolean isEtternavnGylig() {
+		if(etternavn.isEmpty()) {
+			etternavnFeil = "Ikke gyldig";
 			return false;
+		} else {
+			return true;
+		}
+	}
+
+	public boolean isFornavnGyldig() {
+		if(fornavn.isEmpty()) {
+			fornavnFeil = "Ikke gyldig";
+			return false;
+		} else {
+			return true;
 		}
 	}
 

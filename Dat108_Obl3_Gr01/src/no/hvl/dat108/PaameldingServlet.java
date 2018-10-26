@@ -41,6 +41,11 @@ public class PaameldingServlet extends HttpServlet {
 		validering = new Validering(request);
 		
 		validering.isKjonnGyldig();
+		validering.isMobilGyldig();
+		validering.isFornavnGyldig();
+		validering.isEtternavnGylig();
+		validering.isPassordGyldig();
+		validering.isPassord2Gyldig();
 		
 		request.getSession().setAttribute("validering", validering);
 		
