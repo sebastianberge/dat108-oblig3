@@ -51,7 +51,7 @@ public class PaameldingServlet extends HttpServlet {
 		
 		String hashpassord = "";
 		
-	//	if(validering.isAllInputGyldig()) {
+		if(validering.isAllInputGyldig()) {
 			deltakerliste.leggTilDeltaker(
 					new Deltaker(validering.getKjonn(),
 					validering.getFornavn() + " " + validering.getEtternavn(),
@@ -59,7 +59,7 @@ public class PaameldingServlet extends HttpServlet {
 					validering.getMobil()));
 			deltakereEAO.oppdaterDeltakere(deltakerliste);
 
-	//	}
+		}
 		
 		// innlogging godkjent, lag deltaker og send til bekreftelse.
 		response.sendRedirect("PaameldingServlet");
