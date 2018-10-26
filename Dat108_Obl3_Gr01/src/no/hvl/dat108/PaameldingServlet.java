@@ -49,7 +49,7 @@ public class PaameldingServlet extends HttpServlet {
 		
 		request.getSession().setAttribute("validering", validering);
 		
-		String hashpassord = "";
+		String hashpassord = PassordUtil.krypterPassord(request.getParameter("passord"));
 		
 		if(validering.isAllInputGyldig()) {
 			deltakerliste.leggTilDeltaker(
