@@ -17,6 +17,6 @@
 		&nbsp;&nbsp;&nbsp;${validering.etternavn}<br />
 		&nbsp;&nbsp;&nbsp;${validering.mobil}<br /> &nbsp;&nbsp;&nbsp;${validering.kjonn}
 	</p>
-	<a href="deltagerliste">Gå til deltakerlisten</a>
+	<a href="DeltakerlisteServlet">Gå til deltakerlisten</a>
 </body>
 </html>

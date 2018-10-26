@@ -61,7 +61,7 @@ public class PaameldingServlet extends HttpServlet {
 			request.getRequestDispatcher("WEB-INF/paameldingsbekreftelse.jsp").forward(request, response);
 
 		}
-		
+		request.getSession().setAttribute("deltakerliste", deltakerliste.getDeltakerliste());
 		// innlogging godkjent, lag deltaker og send til bekreftelse.
 		response.sendRedirect("PaameldingServlet");
 		
