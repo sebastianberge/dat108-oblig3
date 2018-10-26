@@ -58,6 +58,7 @@ public class PaameldingServlet extends HttpServlet {
 					hashpassord, 
 					validering.getMobil()));
 			deltakereEAO.oppdaterDeltakere(deltakerliste);
+			request.getRequestDispatcher("WEB-INF/paameldingsbekreftelse.jsp").forward(request, response);
 
 		}
 		

@@ -16,17 +16,13 @@ public class LoggInnServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
-		
-		String loginMessage = "";
-		
-		request.getRequestDispatcher("WEB-INF/paalemdingsskjema.jsp");
+
 		
 	}
 
 	protected void doPost(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
-		
-		//if p�melding g�r korrekt, send til p�meldingsbekreftelse, else gi feilmelding
+		 
 		
 	}
 

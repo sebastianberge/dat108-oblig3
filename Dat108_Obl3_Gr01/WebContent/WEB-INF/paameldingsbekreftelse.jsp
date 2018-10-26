@@ -13,10 +13,10 @@
 	<h2>Påmeldingsbekreftelse</h2>
 	<p>Påmeldingen er mottatt for</p>
 	<p>
-		&nbsp;&nbsp;&nbsp;Anne<br />
-		&nbsp;&nbsp;&nbsp;Annesen<br />
-		&nbsp;&nbsp;&nbsp;44554455<br /> &nbsp;&nbsp;&nbsp;kvinne
+		&nbsp;&nbsp;&nbsp;${validering.fornavn}<br />
+		&nbsp;&nbsp;&nbsp;${validering.etternavn}<br />
+		&nbsp;&nbsp;&nbsp;${validering.mobil}<br /> &nbsp;&nbsp;&nbsp;${validering.kjonn}
 	</p>
-	<a href="deltagerliste">Gå til deltagerlisten</a>
+	<a href="deltagerliste">Gå til deltakerlisten</a>
 </body>
 </html>
