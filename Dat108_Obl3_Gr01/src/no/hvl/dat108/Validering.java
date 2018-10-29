@@ -52,7 +52,7 @@ public class Validering {
 	}
 
 	public boolean isPassordGyldig() {
-		if (passord.length() > 4) {
+		if (passord.length() < 5) {
 			passordFeil = "Try again sir";
 			return false;
 		} else {
