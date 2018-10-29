@@ -17,6 +17,7 @@ public class LoggUtServlet extends HttpServlet {
    
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getSession().removeAttribute("feilmelding");
 		request.getRequestDispatcher("WEB-INF/ferdig.jsp").forward(request, response);
 	}
 
