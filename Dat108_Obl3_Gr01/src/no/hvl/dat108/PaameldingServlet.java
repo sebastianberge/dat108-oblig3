@@ -48,6 +48,7 @@ public class PaameldingServlet extends HttpServlet {
 		validering.isPassord2Gyldig();
 		
 		request.getSession().setAttribute("validering", validering);
+
 		
 		String hashpassord = PassordUtil.krypterPassord(request.getParameter("passord"));
 		
@@ -59,9 +60,9 @@ public class PaameldingServlet extends HttpServlet {
 					validering.getMobil()));
 			deltakereEAO.oppdaterDeltakere(deltakerliste);
 			request.getRequestDispatcher("WEB-INF/paameldingsbekreftelse.jsp").forward(request, response);
+			request.getSession().setAttribute("deltakerliste", deltakerliste.getDeltakerliste());
 
 		}
-		request.getSession().setAttribute("deltakerliste", deltakerliste.getDeltakerliste());
 		// innlogging godkjent, lag deltaker og send til bekreftelse.
 		response.sendRedirect("PaameldingServlet");
 		
