@@ -25,6 +25,7 @@ public class LoggInnServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
+		
 		@SuppressWarnings("unchecked")
 		List<Deltaker> deltakerliste = (List<Deltaker>) request.getSession().getAttribute("deltakerliste");
 		
@@ -37,7 +38,7 @@ public class LoggInnServlet extends HttpServlet {
 			request.getRequestDispatcher("WEB-INF/deltagerliste.jsp").forward(request, response);
 		} 
 		else {
-			request.getSession().setAttribute("feilmelding", "Feil brukernavn eller passord");
+			request.getSession().setAttribute("feilmelding", "Feil brukernavn og/eller passord");
 			response.sendRedirect("LoggInnServlet");
 		}
 	}

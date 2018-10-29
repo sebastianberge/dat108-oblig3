@@ -52,7 +52,7 @@ public class Validering {
 	}
 
 	public boolean isPassordGyldig() {
-		if (passord.isEmpty()) {
+		if (passord.length() > 4) {
 			passordFeil = "Try again sir";
 			return false;
 		} else {
@@ -70,7 +70,7 @@ public class Validering {
 	}
 
 	public boolean isEtternavnGylig() {
-		if(etternavn.isEmpty()) {
+		if(etternavn.length() > 1 && Character.isUpperCase(etternavn.charAt(0))) {
 			etternavnFeil = "Ikke gyldig";
 			return false;
 		} else {
@@ -79,7 +79,7 @@ public class Validering {
 	}
 
 	public boolean isFornavnGyldig() {
-		if(fornavn.isEmpty()) {
+		if(fornavn.length() > 1 && Character.isUpperCase(fornavn.charAt(0))) {
 			fornavnFeil = "Ikke gyldig";
 			return false;
 		} else {

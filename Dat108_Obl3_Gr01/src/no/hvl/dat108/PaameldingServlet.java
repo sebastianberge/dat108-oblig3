@@ -29,6 +29,7 @@ public class PaameldingServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
+
 			request.getRequestDispatcher("WEB-INF/paameldingsskjema.jsp")
 			.forward(request, response);
 	}
@@ -60,6 +61,7 @@ public class PaameldingServlet extends HttpServlet {
 			deltakereEAO.oppdaterDeltakere(deltakerliste);
 			request.getRequestDispatcher("WEB-INF/paameldingsbekreftelse.jsp").forward(request, response);
 			request.getSession().setAttribute("deltakerliste", deltakerliste.getDeltakerliste());
+			
 
 		}
 		// innlogging godkjent, lag deltaker og send til bekreftelse.
