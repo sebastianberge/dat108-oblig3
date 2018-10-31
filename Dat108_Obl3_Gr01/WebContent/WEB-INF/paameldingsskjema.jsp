@@ -53,8 +53,10 @@
 			</div>
 		</fieldset>
 	</form>
-	<form action="LoggInnServlet" class="pure-form pure-form-aligned">
-    	<button type="submit" class="pure-button pure-button-primary">Logg inn</button>
-	</form>
+		<form action="LoggInnServlet" class="pure-form pure-form-aligned">
+			<div class="pure-controls">
+		    	<button type="submit" class="pure-button pure-button-primary">Logg inn</button>
+		    </div>
+		</form>
 </body>
 </html>
