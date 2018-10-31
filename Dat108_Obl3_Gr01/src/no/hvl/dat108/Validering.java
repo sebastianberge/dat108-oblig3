@@ -38,7 +38,7 @@ public class Validering {
 	}
 
 	public boolean isPassordGyldig() {
-		return passord.length() < 5;
+		return passord.length() > 5;
 	}
 
 	public boolean isMobilGyldig() {

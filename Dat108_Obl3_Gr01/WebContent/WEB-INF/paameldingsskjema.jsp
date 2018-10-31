@@ -16,28 +16,28 @@
 			<div class="pure-control-group">
 				<label for="fornavn">Fornavn:</label> <input type="text"
 					name="fornavn" value="${validering.fornavn}" /> 
-					<font color="red">${validering.fornavnFeil}</font>
+					<font color="red"></font>
 			</div>
 			<div class="pure-control-group">
 				<label for="etternavn">Etternavn:</label> <input type="text"
 					name="etternavn" value="${validering.etternavn}" /> 
-					<font color="red">${validering.etternavnFeil}</font>
+					<font color="red"></font>
 			</div>
 			<div class="pure-control-group">
 				<label for="mobil">Mobil (8 siffer):</label> <input type="text"
 					name="mobil" value="${validering.mobil}" /> 
-					<font color="red">${validering.mobilFeil}</font>
+					<font color="red"></font>
 			</div>
 			<div class="pure-control-group">
 				<label for="password">Passord:</label> <input type="password"
 					name="passord" value="${validering.passord}" /> 
-					<font color="red">${validering.passordFeil}</font>
+					<font color="red"></font>
 			</div>
 			<div class="pure-control-group">
 				<label for="passordRepetert">Passord repetert:</label> <input
 					type="password" name="passordRepetert"
 					value="${validering.passord2}" /> 
-					<font color="red">${validering.passord2Feil}</font>
+					<font color="red"></font>
 			</div>
 			<div class="pure-control-group">
 				<label for="kjonn">Kjonn:</label> <input type="radio" name="kjonn"
@@ -45,13 +45,16 @@
 					 />mann
 				<input type="radio" name="kjonn" value="kvinne"
 					 />kvinne
-				<font color="red">${validering.kjonnFeil}</font>
+				<font color="red"></font>
 			</div>
 			<div class="pure-controls">
-				<button type="submit" class="pure-button pure-button-primary">Meld
+				<button type="submit" class="pure-button pure-button-primary" name="Meldpaa">Meld
 					meg paa</button>
 			</div>
 		</fieldset>
+	</form>
+	<form action="LoggInnServlet" class="pure-form pure-form-aligned">
+    	<button type="submit" class="pure-button pure-button-primary">Logg inn</button>
 	</form>
 </body>
 </html>

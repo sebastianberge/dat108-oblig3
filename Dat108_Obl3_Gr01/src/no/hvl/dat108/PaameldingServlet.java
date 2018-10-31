@@ -29,7 +29,8 @@ public class PaameldingServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
-
+		
+			request.getSession().setAttribute("deltakerliste", deltakerliste.getDeltakerliste());
 			request.getRequestDispatcher("WEB-INF/paameldingsskjema.jsp")
 			.forward(request, response);
 	}
@@ -37,36 +38,26 @@ public class PaameldingServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
 		
-		
-		validering = new Validering(request);
-		
-		validering.isKjonnGyldig();
-		validering.isMobilGyldig();
-		validering.isFornavnGyldig();
-		validering.isEtternavnGylig();
-		validering.isPassordGyldig();
-		validering.isPassord2Gyldig();
-		
-		request.getSession().setAttribute("validering", validering);
-
-		
-		String hashpassord = PassordUtil.krypterPassord(request.getParameter("passord"));
-		
-		if(validering.isAllInputGyldig()) {
-			deltakerliste.leggTilDeltaker(
-					new Deltaker(validering.getKjonn(),
-					validering.getFornavn() + " " + validering.getEtternavn(),
-					hashpassord, 
-					validering.getMobil()));
-			deltakereEAO.oppdaterDeltakere(deltakerliste);
-			request.getRequestDispatcher("WEB-INF/paameldingsbekreftelse.jsp").forward(request, response);
-			request.getSession().setAttribute("deltakerliste", deltakerliste.getDeltakerliste());
+			validering = new Validering(request);
 			
-
-		}
-		// innlogging godkjent, lag deltaker og send til bekreftelse.
-		response.sendRedirect("PaameldingServlet");
-		
+			request.getSession().setAttribute("validering", validering);
+	
+			
+			String hashpassord = PassordUtil.krypterPassord(request.getParameter("passord"));
+			
+			if(validering.isAllInputGyldig()) {
+				deltakerliste.leggTilDeltaker(
+						new Deltaker(validering.getKjonn(),
+						validering.getFornavn() + " " + validering.getEtternavn(),
+						hashpassord, 
+						validering.getMobil()));
+				deltakereEAO.oppdaterDeltakere(deltakerliste);
+				request.getRequestDispatcher("WEB-INF/paameldingsbekreftelse.jsp").forward(request, response);
+				
+	
+			}
+			// innlogging godkjent, lag deltaker og send til bekreftelse.
+			response.sendRedirect("PaameldingServlet");
 	}
 
 }
