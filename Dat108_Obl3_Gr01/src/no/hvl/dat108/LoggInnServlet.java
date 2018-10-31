@@ -34,6 +34,8 @@ public class LoggInnServlet extends HttpServlet {
 		 
 		Deltaker d = deltakerliste.stream().filter(x -> x.getMobil().equals(mobil)).findAny().orElse(null);
 		
+		request.getSession().setAttribute("innlogger", d);
+		
 		if(d != null && PassordUtil.sjekkPassord(passord, d.getHashpassord())) {
 			request.getRequestDispatcher("WEB-INF/deltagerliste.jsp").forward(request, response);
 		} 
