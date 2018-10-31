@@ -40,11 +40,9 @@ public class PaameldingServlet extends HttpServlet {
 			validering = new Validering(request);
 			
 			request.getSession().setAttribute("validering", validering);
-	
-			
-			String hashpassord = PassordUtil.krypterPassord(request.getParameter("passord"));
 			
 			if(validering.isAllInputGyldig()) {
+				String hashpassord = PassordUtil.krypterPassord(request.getParameter("passord"));
 				deltakerliste.leggTilDeltaker(
 						new Deltaker(validering.getKjonn(),
 						validering.getFornavn() + " " + validering.getEtternavn(),
