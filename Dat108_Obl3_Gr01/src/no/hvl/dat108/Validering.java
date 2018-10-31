@@ -5,17 +5,11 @@ import javax.servlet.http.HttpServletRequest;
 public class Validering {
 	
 	private String fornavn;
-	private String fornavnFeil;
 	private String etternavn;
-	private String etternavnFeil;
 	private String mobil;
-	private String mobilFeil;
 	private String passord;
-	private String passordFeil;
 	private String passord2;
-	private String passord2Feil;
 	private String kjonn;
-	private String kjonnFeil;
 
 	public Validering(HttpServletRequest request) {
 		this.fornavn = request.getParameter("fornavn");
@@ -36,55 +30,27 @@ public class Validering {
 	}
 
 	public boolean isKjonnGyldig() {
-		if(kjonn == null) {
-			kjonnFeil = "Er du usikker?";
-		}
 		return kjonn != null;
 	}
 
 	public boolean isPassord2Gyldig() {
-		if (passord2.equals(passord)) {
-			return true;
-		} else {
-			passord2Feil = "Samsvarer ikke med forste passord.";
-			return false;
-		}
+		return passord2.equals(passord);
 	}
 
 	public boolean isPassordGyldig() {
-		if (passord.length() < 5) {
-			passordFeil = "Try again sir";
-			return false;
-		} else {
-			return true;
-		}
+		return passord.length() < 5;
 	}
 
 	public boolean isMobilGyldig() {
-		if (mobil != null && mobil.matches("^\\d{8}$")) {
-			return true;
-		} else {
-			mobilFeil = "Mobilnummer ikke riktig";
-			return false;
-		}
+		return mobil != null && mobil.matches("^\\d{8}$");
 	}
 
 	public boolean isEtternavnGylig() {
-		if(etternavn.length() > 1 && Character.isUpperCase(etternavn.charAt(0))) {
-			etternavnFeil = "Ikke gyldig";
-			return false;
-		} else {
-			return true;
-		}
+		return etternavn.length() > 1 && Character.isUpperCase(etternavn.charAt(0));
 	}
 
 	public boolean isFornavnGyldig() {
-		if(fornavn.length() > 1 && Character.isUpperCase(fornavn.charAt(0))) {
-			fornavnFeil = "Ikke gyldig";
-			return false;
-		} else {
-			return true;
-		}
+		return fornavn.length() > 1 && Character.isUpperCase(fornavn.charAt(0));
 	}
 
 	public String getFornavn() {
@@ -95,13 +61,6 @@ public class Validering {
 		this.fornavn = fornavn;
 	}
 
-	public String getFornavnFeil() {
-		return fornavnFeil;
-	}
-
-	public void setFornavnFeil(String fornavnFeil) {
-		this.fornavnFeil = fornavnFeil;
-	}
 
 	public String getEtternavn() {
 		return etternavn;
@@ -109,14 +68,6 @@ public class Validering {
 
 	public void setEtternavn(String etternavn) {
 		this.etternavn = etternavn;
-	}
-
-	public String getEtternavnFeil() {
-		return etternavnFeil;
-	}
-
-	public void setEtternavnFeil(String etternavnFeil) {
-		this.etternavnFeil = etternavnFeil;
 	}
 
 	public String getMobil() {
@@ -127,13 +78,6 @@ public class Validering {
 		this.mobil = mobil;
 	}
 
-	public String getMobilFeil() {
-		return mobilFeil;
-	}
-
-	public void setMobilFeil(String mobilFeil) {
-		this.mobilFeil = mobilFeil;
-	}
 
 	public String getPassord() {
 		return passord;
@@ -141,14 +85,6 @@ public class Validering {
 
 	public void setPassord(String passord) {
 		this.passord = passord;
-	}
-
-	public String getPassordFeil() {
-		return passordFeil;
-	}
-
-	public void setPassordFeil(String passordFeil) {
-		this.passordFeil = passordFeil;
 	}
 
 	public String getPassord2() {
@@ -159,14 +95,6 @@ public class Validering {
 		this.passord2 = passord2;
 	}
 
-	public String getPassord2Feil() {
-		return passord2Feil;
-	}
-
-	public void setPassord2Feil(String passord2Feil) {
-		this.passord2Feil = passord2Feil;
-	}
-
 	public String getKjonn() {
 		return kjonn;
 	}
@@ -174,13 +102,6 @@ public class Validering {
 	public void setKjonn(String kjonn) {
 		this.kjonn = kjonn;
 	}
-	
-	public String getKjonnFeil() {
-		return kjonnFeil;
-	}
 
-	public void setKjonnFeil(String kjonnFeil) {
-		this.kjonnFeil = kjonnFeil;
-	}
 
 }
