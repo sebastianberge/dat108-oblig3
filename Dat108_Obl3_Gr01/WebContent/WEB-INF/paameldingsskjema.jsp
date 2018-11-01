@@ -20,22 +20,22 @@
 					<font color="red"></font>
 			</div>
 			<div class="pure-control-group">
-				<label for="etternavn">Etternavn:</label> <input type="text"
+				<label for="etternavn">Etternavn:</label> <input id="lastName" type="text"
 					name="etternavn" value="${validering.etternavn}" /> 
 					<font color="red"></font>
 			</div>
 			<div class="pure-control-group">
-				<label for="mobil">Mobil (8 siffer):</label> <input type="text"
+				<label for="mobil">Mobil (8 siffer):</label> <input id="phone" type="text"
 					name="mobil" value="${validering.mobil}" /> 
 					<font color="red"></font>
 			</div>
 			<div class="pure-control-group">
-				<label for="password">Passord:</label> <input type="password"
+				<label for="password">Passord:</label> <input id="pass" type="password"
 					name="passord" value="${validering.passord}" /> 
 					<font color="red"></font>
 			</div>
 			<div class="pure-control-group">
-				<label for="passordRepetert">Passord repetert:</label> <input
+				<label for="passordRepetert">Passord repetert:</label> <input id="passConf"
 					type="password" name="passordRepetert"
 					value="${validering.passord2}" /> 
 					<font color="red"></font>
