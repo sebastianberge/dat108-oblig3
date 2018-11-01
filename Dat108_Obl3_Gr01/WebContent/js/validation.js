@@ -1,12 +1,12 @@
 "use strict";
 
-let inputFirst = document.getElementById("firstName");
-let inputLast = document.getElementById("lastName");
-let inputPhone = document.getElementById("phone");
-let inputPass = document.getElementById("pass");
-let inputPassConf = document.getElementById("passConf");
-let inputMann = document.getElementById("mann");
-let inputKvinne = document.getElementById("kvinne");
+let inputFirst = document.getElementById("firstName").value;
+let inputLast = document.getElementById("lastName").value;
+let inputPhone = document.getElementById("phone").value;
+let inputPass = document.getElementById("pass").value;
+let inputPassConf = document.getElementById("passConf").value;
+let inputMann = document.getElementById("mann").value;
+let inputKvinne = document.getElementById("kvinne").value;
 
 let fornavn = document.getElementById("fornavn");
 let eternavn = document.getElementById("etternavn");
@@ -18,10 +18,22 @@ let kjonn = document.getElementById("kjonn");
 validasjon();
 
 function validasjon() {
-	fornavn.innerHTML = "Fornavn maa begynne med stor bokstav!";
-	etternavn.innerHTML = "Etternavn maa begynne med stor bokstav!";
-	mobil.innerHTML = "Maa vaere et gyldig telefonnummer!";
-	passord.innerHTML = "Passord maa vaere lengre enn 4 bokstaver!";
-	fornavn2.innerHTML = "Maa vaere to like passord!";
-	kjonn.innerHTML = "Vennligst velg et kjonn!";
+	if((inputFirst !== "") && (inputFirst[0] !== inputFirst[0].toUpperCase())) {
+		fornavn.innerHTML = "Fornavn maa begynne med stor bokstav!";
+	}
+	if((inputLast !== "") && (inputLast[0] !== inputLast[0].toUpperCase())) {
+		etternavn.innerHTML = "Etternavn maa begynne med stor bokstav!";
+	}
+	if((inputPhone !== "")) {
+		mobil.innerHTML = "Maa vaere et gyldig telefonnummer!";
+	}
+	if((inputPass !== "")) {
+		passord.innerHTML = "Passord maa vaere lengre enn 4 bokstaver!";
+	}
+	if((inputPassConf !== "")) {
+		passord2.innerHTML = "Maa vaere to like passord!";
+	}
+	if((inputMann !== "") && (inputKvinne !== "")) {
+		kjonn.innerHTML = "Vennligst velg et kjonn!";
+	}
 }
