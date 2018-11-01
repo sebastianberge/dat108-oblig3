@@ -14,8 +14,9 @@
 	<form method="post" class="pure-form pure-form-aligned">
 		<fieldset>
 			<div class="pure-control-group">
-				<label for="fornavn">Fornavn:</label> <input type="text"
-					name="fornavn" value="${validering.fornavn}" /> 
+				<label for="fornavn">Fornavn:</label> <input id="firstName" type="text"
+					name="fornavn" value="${validering.fornavn}" />
+					<p id="demo" color="red"></p> 
 					<font color="red"></font>
 			</div>
 			<div class="pure-control-group">
@@ -58,5 +59,8 @@
 		    	<button type="submit" class="pure-button pure-button-primary">Logg inn</button>
 		    </div>
 		</form>
+		
+	<script src="Validation.js">
+	</script>
 </body>
 </html>
