@@ -16,7 +16,7 @@
 			<div class="pure-control-group">
 				<label for="fornavn">Fornavn:</label> <input id="firstName" type="text"
 					name="fornavn" value="${validering.fornavn}" />
-					<p id="demo" color="red"></p> 
+					<p id="test" color="red"></p> 
 					<font color="red"></font>
 			</div>
 			<div class="pure-control-group">
@@ -60,7 +60,6 @@
 		    </div>
 		</form>
 		
-	<script src="Validation.js">
-	</script>
+	<script></script>
 </body>
 </html>
