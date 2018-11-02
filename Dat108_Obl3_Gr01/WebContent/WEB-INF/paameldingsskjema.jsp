@@ -15,12 +15,12 @@
 		<fieldset>
 			<div class="pure-control-group">
 				<label for="fornavn">Fornavn:</label> <input id="firstName" type="text"
-					name="fornavn" value="${validering.fornavn}" />
+					name="fornavn" value="${validering.fornavn}" oninput="testFornavn()" />
 					<div id="fornavn"><font color="red"></font></div> 
 			</div>
 			<div class="pure-control-group">
 				<label for="etternavn">Etternavn:</label> <input id="lastName" type="text"
-					name="etternavn" value="${validering.etternavn}" /> 
+					name="etternavn" value="${validering.etternavn}" oninput="testEtternavn()" /> 
 					<div id="etternavn"><font color="red"></font></div> 
 			</div>
 			<div class="pure-control-group">
