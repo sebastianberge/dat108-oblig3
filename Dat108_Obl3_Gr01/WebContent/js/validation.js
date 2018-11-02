@@ -1,19 +1,5 @@
 "use strict";
 
-let inputLast = document.getElementById("lastName").value;
-let inputPhone = document.getElementById("phone").value;
-let inputPass = document.getElementById("pass").value;
-let inputPassConf = document.getElementById("passConf").value;
-let inputMann = document.getElementById("mann").value;
-let inputKvinne = document.getElementById("kvinne").value;
-
-let fornavn = document.getElementById("fornavn");
-let etternavn = document.getElementById("etternavn");
-let mobil = document.getElementById("mobil");
-let passord = document.getElementById("passord");
-let passord2 = document.getElementById("passord2");
-let kjonn = document.getElementById("kjonn");
-
 //validasjon();
 testFornavn();
 testEtternavn();
@@ -44,12 +30,12 @@ function fornavnGreen() {
 
 function fornavnFeilmelding() {
 	document.getElementById("fornavn").style.color = "red";
-	document.getElementById("fornavn").innerHTML = "Fornavn maa begynne med stor bokstav!";
+	document.getElementById("fornavn").innerHTML = "Ha stor forbokstav!";
 }
 
 function fornavnGodkjent() {
 	document.getElementById("fornavn").style.color = "green";
-	document.getElementById("fornavn").innerHTML = "Herlig, fortsett med dette!";
+	document.getElementById("fornavn").innerHTML = "Godkjekt!";
 }
 
 /* Validering etternavn */
@@ -74,105 +60,100 @@ function etternavnGreen() {
 
 function etternavnFeilmelding() {
 	document.getElementById("etternavn").style.color = "red";
-	document.getElementById("etternavn").innerHTML = "Fornavn maa begynne med stor bokstav!";
+	document.getElementById("etternavn").innerHTML = "Ha stor forbokstav";
 }
 
 function etternavnGodkjent() {
 	document.getElementById("etternavn").style.color = "green";
-	document.getElementById("etternavn").innerHTML = "Herlig, fortsett med dette!";
+	document.getElementById("etternavn").innerHTML = "Godkjent!";
 }
 
 /* Validering telefon */
 function testTelefon() {
 	var inputTelefon = document.getElementById("phone").value;
-	if (inputTelefon !== f[0].toUpperCase()) {
-		document.getElementById("firstName").style.color = "red";
-		skrivFeilmelding();
+	if (inputTelefon.length !== 8) {
+		telefonRed();
+		telefonFeilmelding();
 	} else {
-		changeColorGreen();
-		skrivOk();
+		telefonGreen();
+		telefonGodkjent();
 	}
 }
 
 function telefonRed() {
-	document.getElementById("lastName").style.color = "red";
+	document.getElementById("phone").style.color = "red";
 }
 
 function telefonGreen() {
-	document.getElementById("lastName").style.color = "green";
+	document.getElementById("phone").style.color = "green";
 }
 
 function telefonFeilmelding() {
-	document.getElementById("etternavn").style.color = "red";
-	document.getElementById("etternavn").innerHTML = "Fornavn maa begynne med stor bokstav!";
+	document.getElementById("mobil").style.color = "red";
+	document.getElementById("mobil").innerHTML = "Skriv 8 siffer";
 }
 
 function telefonGodkjent() {
-	document.getElementById("etternavn").style.color = "green";
-	document.getElementById("etternavn").innerHTML = "Herlig, fortsett med dette!";
+	document.getElementById("mobil").style.color = "green";
+	document.getElementById("mobil").innerHTML = "Godkjent!";
 }
 
 /* Validering passord */
 function testPassord() {
-	var f = document.getElementById("firstName").value;
-	if (f[0] !== f[0].toUpperCase()) {
-		changeColorRed();
-		skrivFeilmelding();
+	var inputPassord = document.getElementById("pass").value;
+	if (inputPassord.length < 5) {
+		passordRed();
+		passordFeilmelding();
 	} else {
-		changeColorGreen();
-		skrivOk();
+		passordGreen();
+		passordGodkjent();
 	}
 }
 
-/* Validering passord2 */
+function passordRed() {
+	document.getElementById("pass").style.color = "red";
+}
+
+function passordGreen() {
+	document.getElementById("pass").style.color = "green";
+}
+
+function passordFeilmelding() {
+	document.getElementById("passord").style.color = "red";
+	document.getElementById("passord").innerHTML = "Minst 5 tegn";
+}
+
+function passordGodkjent() {
+	document.getElementById("passord").style.color = "green";
+	document.getElementById("passord").innerHTML = "Godkjent!";
+}
+
+/* Validering passord repetisjon */
 function testPassordConfirmation() {
-	var f = document.getElementById("firstName").value;
-	if (f[0] !== f[0].toUpperCase()) {
-		changeColorRed();
-		skrivFeilmelding();
+	var inputPassConf = document.getElementById("passConf").value;
+	if (inputPassConf !== document.getElementById("pass").value) {
+		passordConfRed();
+		passordConfFeilmelding();
 	} else {
-		changeColorGreen();
-		skrivOk();
+		passordConfGreen();
+		passordConfGodkjent();
 	}
 }
 
-/* Validering av kjonn */
-function testKjonn() {
-	var f = document.getElementById("firstName").value;
-	if (f[0] !== f[0].toUpperCase()) {
-		changeColorRed();
-		skrivFeilmelding();
-	} else {
-		changeColorGreen();
-		skrivOk();
-	}
+function passordConfRed() {
+	document.getElementById("passConf").style.color = "red";
 }
 
-
-
-
-
-
-/* GAMMEL KODE */
-/*
-function validasjon() {
-	if((inputFirst !== "") && (inputFirst[0] !== inputFirst[0].toUpperCase())) {
-		fornavn.innerHTML = "Stor forbokstav!";
-	}
-	if((inputLast !== "") && (inputLast[0] !== inputLast[0].toUpperCase())) {
-		etternavn.innerHTML = "Stor forbokstav!";
-	}
-	if((inputPhone !== "") && (inputPhone.length !== 8)) {
-		mobil.innerHTML = "Skriv 8 siffer!";
-	}
-	if((inputPass !== "") && (inputPass.length < 5)) {
-		passord.innerHTML = "Mer enn 4 bokstaver!";
-	}
-	if((inputPassConf !== "") (inputPassConf !== inputPass)) {
-		passord2.innerHTML = "Ikke like passord!";
-	}
-	if((inputMann !== "") && (inputKvinne !== "")) {
-		kjonn.innerHTML = "Usikker?";
-	}
+function passordConfGreen() {
+	document.getElementById("passConf").style.color = "green";
 }
-*/
+
+function passordConfFeilmelding() {
+	document.getElementById("passord2").style.color = "red";
+	document.getElementById("passord2").innerHTML = "Ulike passord";
+}
+
+function passordConfGodkjent() {
+	document.getElementById("passord2").style.color = "green";
+	document.getElementById("passord2").innerHTML = "Godkjent!";
+}
