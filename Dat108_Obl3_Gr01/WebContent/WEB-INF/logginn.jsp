@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="css/index.css">
 <meta charset="ISO-8859-1">
 <!-- Fra https://purecss.io/ -->
 <link rel="stylesheet"
@@ -10,11 +11,13 @@
 <title>Logg inn</title>
 </head>
 <body>
+
+
 	<h2>Logg inn</h2>
-	<p>Det er kun registrerte deltagere som får se deltagerlisten.</p>
-	<p>
+	<p>Det er kun registrerte deltagere som får se deltagerlisten.</p> 
+	<p> 
 		<font color="red">${feilmelding}</font>
-	</p>
+	</p> 
 	<form method="post" class="pure-form pure-form-aligned">
 		<fieldset>
 			<div class="pure-control-group">
@@ -30,6 +33,8 @@
 			</div>
 		</fieldset>
 	</form>
+	
+	
 
 </body>
 </html>

@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="css/index.css">
 <meta charset="ISO-8859-1">
 <link href="/open-iconic/font/css/open-iconic.css" rel="stylesheet">
 <link rel="stylesheet"

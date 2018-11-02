@@ -157,22 +157,22 @@ function testKjonn() {
 /*
 function validasjon() {
 	if((inputFirst !== "") && (inputFirst[0] !== inputFirst[0].toUpperCase())) {
-		fornavn.innerHTML = "Fornavn maa begynne med stor bokstav!";
+		fornavn.innerHTML = "Stor forbokstav!";
 	}
 	if((inputLast !== "") && (inputLast[0] !== inputLast[0].toUpperCase())) {
-		etternavn.innerHTML = "Etternavn maa begynne med stor bokstav!";
+		etternavn.innerHTML = "Stor forbokstav!";
 	}
-	if((inputPhone !== "")) {
-		mobil.innerHTML = "Maa vaere et gyldig telefonnummer!";
+	if((inputPhone !== "") && (inputPhone.length !== 8)) {
+		mobil.innerHTML = "Skriv 8 siffer!";
 	}
-	if((inputPass !== "")) {
-		passord.innerHTML = "Passord maa vaere lengre enn 4 bokstaver!";
+	if((inputPass !== "") && (inputPass.length < 5)) {
+		passord.innerHTML = "Mer enn 4 bokstaver!";
 	}
-	if((inputPassConf !== "")) {
-		passord2.innerHTML = "Maa vaere to like passord!";
+	if((inputPassConf !== "") (inputPassConf !== inputPass)) {
+		passord2.innerHTML = "Ikke like passord!";
 	}
 	if((inputMann !== "") && (inputKvinne !== "")) {
-		kjonn.innerHTML = "Vennligst velg et kjonn!";
+		kjonn.innerHTML = "Usikker?";
 	}
 }
 */
