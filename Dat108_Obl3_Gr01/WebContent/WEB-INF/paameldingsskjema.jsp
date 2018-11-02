@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="css/index.css">
 <meta charset="ISO-8859-1">
 <!-- Fra https://purecss.io/ -->
 <link rel="stylesheet"
