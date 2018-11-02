@@ -35,7 +35,7 @@ function fornavnFeilmelding() {
 
 function fornavnGodkjent() {
 	document.getElementById("fornavn").style.color = "green";
-	document.getElementById("fornavn").innerHTML = "Godkjekt!";
+	document.getElementById("fornavn").innerHTML = "Godkjent!";
 }
 
 /* Validering etternavn */
